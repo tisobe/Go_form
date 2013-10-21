@@ -19,7 +19,7 @@ use CGI ':standard';
 #                                                                                                           #
 #       also works if it is used with /data/mpcrit1/bin/perl with no .htaccess file                         #
 #                                                                                                           #
-#       Last Update: Sep 25, 2013                                                                           #
+#       Last Update: Oct 21, 2013                                                                           #
 #                                                                                                           #
 #############################################################################################################
 
@@ -224,7 +224,12 @@ if ($stage eq "mailit") {
             print "--------------<br /></p>";
 
             print "<pre>";
-	        print "$the_letter";	
+            $the_letter_temp = $the_letter;
+            $the_letter_temp =~ s/\&/&amp;/g;
+            $the_letter_temp =~ s/\>/&gt;/g;
+            $the_letter_temp =~ s/\</&lt;/g;
+            $the_letter_temp =~ s/\-/&ndash;/g;
+	        print "$the_letter_temp";	
             print "</pre>";
 
 	        html_footer();	
