@@ -1,9 +1,10 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 
 BEGIN
   {
-    $ENV{SYBASE} = "/soft/sybase";
-    $ENV{PATH} = "/soft/sybase:/usr/bin:/usr/local/bin";
+    $ENV{SYBASE} = "/soft/SYBASE15.7";
+#    $ENV{SYBASE} = "/soft/sybase";
+#    $ENV{PATH} = "/soft/sybase:/usr/bin:/usr/local/bin";
   }
 
 use DBI;
